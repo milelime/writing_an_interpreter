@@ -11,7 +11,7 @@ func TestNextToken(t *testing.T) {
 let ten = 10;
 
 let add = fn(x, y) {
-	x + y;
+  x + y;
 };
 
 let result = add(five, ten);
@@ -25,7 +25,8 @@ if (5 < 10) {
 }
 
 10 == 10;
-10 != 9;`
+10 != 9;
+`
 
 	tests := []struct {
 		expectedType    token.TokenType
@@ -113,7 +114,7 @@ if (5 < 10) {
 		tok := l.NextToken()
 
 		if tok.Type != tt.expectedType {
-			t.Fatalf("test[%d] - tokentype wrong. expected=%q, got=%q",
+			t.Fatalf("tests[%d] - tokentype wrong. expected=%q, got=%q",
 				i, tt.expectedType, tok.Type)
 		}
 
